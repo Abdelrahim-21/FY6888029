@@ -4,107 +4,137 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pagers Unplugged: From Lifesavers to Lifetakers</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <style>
         body {
             font-family: Arial, sans-serif;
             line-height: 1.6;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
         }
-        h1, h2 {
-            color: #333;
+        header, nav, section, footer {
+            padding: 20px;
+            margin: 10px;
+        }
+        header {
+            text-align: center;
+            background: #003366;
+            color: white;
+        }
+        header img {
+            width: 100%;
+            height: auto;
         }
         nav {
             background-color: #f4f4f4;
-            padding: 10px;
+            text-align: center;
+            padding: 10px 0;
             margin-bottom: 20px;
         }
         nav a {
-            margin-right: 10px;
+            margin: 0 15px;
             text-decoration: none;
             color: #007bff;
         }
         nav a:hover {
             text-decoration: underline;
         }
-        figure {
-            margin: 20px 0;
+        h1, h2 {
+            color: #333;
         }
-        figcaption {
-            font-style: italic;
+        section {
+            padding: 20px;
+            background: white;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
-        .timeline-item {
-            display: flex;
-            margin-bottom: 10px;
+        .chart {
+            text-align: center;
         }
-        .timeline-year {
-            font-weight: bold;
-            margin-right: 10px;
-        }
-        .timeline-event {
-            flex: 1;
+        footer {
+            text-align: center;
+            background: #003366;
+            color: white;
+            padding: 10px;
+            margin-top: 20px;
         }
     </style>
 </head>
 <body>
 
-    <h2><img src="WebBanner2023.png" alt="Banner" width="1200" height="300"></h2>
-    <h1><b>ENG0018 Computer Laboratory 2024/25</b></h1>
+<header>
+    <h1>ENG0018 Computer Laboratory 2024/25</h1>
     <h2>Student URN: 6888029</h2>
+    <img src="WebBanner2023.png" alt="University Banner">
+</header>
 
-    <h1>Pagers Unplugged: From Lifesavers to Lifetakers</h1>
+<nav>
+    <a href="#abstract">Abstract</a>
+    <a href="#introduction">Introduction</a>
+    <a href="#the-rise-of-pagers">The Rise of Pagers</a>
+    <a href="#conclusion">Conclusion</a>
+    <a href="#references">References</a>
+</nav>
 
-    <nav>
-        <a href="#abstract">Abstract</a>
-        <a href="#introduction">Introduction</a>
-        <a href="#the-rise-of-pagers">The Rise of Pagers</a>
-        <a href="#the-shadow-side-privacy-concerns">The Shadow Side: Privacy Concerns</a>
-        <a href="#engineering-for-control-and-surveillance">Engineering for Control and Surveillance</a>
-        <a href="#pagers-in-political-and-military-contexts">Pagers in Political and Military Contexts</a>
-        <a href="#potential-risks-with-modern-technologies">Potential Risks with Modern Technologies</a>
-        <a href="#conclusion">Conclusion</a>
-        <a href="#references">References</a>
-    </nav>
+<section id="abstract">
+    <h2>Abstract</h2>
+    <p>This article explores the evolution of pagers...</p>
+</section>
 
-    <h2 id="abstract">Abstract</h2>
-    <p>This article explores the evolution of pagers, detailing their rise as a critical communication tool in the 1980s and 1990s, primarily within healthcare, emergency services, and corporate sectors. It discusses the privacy concerns and ethical dilemmas that arose from the use of pagers, particularly regarding the interception of signals and the potential for surveillance. The article also examines the political and military uses of pagers, using the 2024 Israel-Hezbollah conflict as a case study to illustrate the dangers of weaponizing communication technology. The broader implications of these risks are considered in the context of modern technologies like smartphones and electric cars, highlighting the need for robust security measures. The conclusion emphasizes the double-edged nature of technological advancements, advocating for a balanced approach to innovation that mitigates potential misuse.</p>
+<section id="introduction">
+    <h2>Introduction</h2>
+    <p>In an era before smartphones...</p>
+</section>
 
-    <h2 id="introduction">Introduction</h2>
-    <p>In an era before smartphones and instant messaging, pagers were the epitome of cutting-edge communication technology. These small, portable devices revolutionized the way people stayed connected, particularly in critical industries such as healthcare, emergency services, and corporate sectors (Smith, 2022). However, the rise and fall of pagers also unveil the often overlooked darker aspects of engineering advancements.</p>
+<section id="the-rise-of-pagers">
+    <h2>The Rise of Pagers</h2>
+    <p>Pagers, also known as beepers...</p>
+    <div class="chart" id="chart_div"></div>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+        google.charts.load('current', {'packages':['corechart']});
+        google.charts.setOnLoadCallback(drawChart);
+        function drawChart() {
+            var data = google.visualization.arrayToDataTable([
+                ['Year', 'Users (millions)'],
+                ['1980', 2],
+                ['1990', 10],
+                ['2000', 40],
+                ['2010', 20],
+                ['2020', 5]
+            ]);
 
-    <h2 id="the-rise-of-pagers">The Rise of Pagers</h2>
-    <p>Pagers, also known as beepers, became widely used in the 1980s and 1990s. They provided a simple yet efficient way to send and receive short messages, alerting users to important information wherever they were. The technology was straightforward: a pager would receive a signal from a transmitter, prompting a beep or vibration, followed by a short numeric or alphanumeric message.</p>
+            var options = {
+                title: 'Global Pager Usage Over Time',
+                hAxis: {title: 'Year'},
+                vAxis: {title: 'Users (millions)'}
+            };
 
-    <figure>
-        <div id="timeline"></div>
-        <figcaption>Figure 1: Timeline of Pager Technology Development. This timeline illustrates the key milestones in the development and adoption of pager technology from the 1920s to 2020s.</figcaption>
-    </figure>
+            var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
+            chart.draw(data, options);
+        }
+    </script>
+</section>
 
-    <p>Initially, pagers were embraced in medical settings, enabling doctors to be contacted swiftly during emergencies. The quick and reliable communication they facilitated was a game-changer, saving countless lives (Smith, 2022). Similarly, emergency responders and business professionals found pagers indispensable for their need to be reachable at all times.</p>
+<section id="conclusion">
+    <h2>Conclusion</h2>
+    <p>The story of pagers is a testament to...</p>
+</section>
 
-    <h2 id="the-shadow-side-privacy-concerns">The Shadow Side: Privacy Concerns</h2>
-    <p>As with many technological advancements, pagers had their drawbacks, the most notable being privacy concerns. Since pagers used public airwaves to transmit signals, they were inherently vulnerable to interception. Eavesdropping on pager messages became a relatively simple task for those with the right equipment, leading to significant concerns about the confidentiality of sensitive information (Brown, 2021).</p>
-    <p>This vulnerability was particularly troubling in the medical field, where the privacy of patient information is paramount. Engineers and developers faced ethical dilemmas in balancing innovation with the responsibility to protect users' data (Freundlich, Freundlich & Drolet, 2018).</p>
-
-    <h2 id="engineering-for-control-and-surveillance">Engineering for Control and Surveillance</h2>
-    <p>The widespread use of pagers also highlighted a darker aspect of engineering: the potential for control and surveillance. Employers and organizations could keep tabs on their employees' whereabouts and availability at all times, blurring the lines between professional and personal life. This constant connectivity, while beneficial for productivity, raised questions about autonomy and work-life balance (Fuggle, Harrison & MacArthur, 2021).</p>
-    <p>In some cases, the ability to track individuals through their pagers was misused, leading to ethical concerns about the invasion of privacy. The technology intended to enhance communication and efficiency also brought about a new means of monitoring and, at times, controlling individuals.</p>
-
-    <h2 id="pagers-in-political-and-military-contexts">Pagers in Political and Military Contexts</h2>
-    <p>Pagers have not only been tools for communication but have also played significant roles in political and military contexts. One notable example is the use of pagers in the Israel-Hezbollah conflict. In September 2024, a series of explosions involving pagers and walkie-talkies occurred across Lebanon, resulting in significant casualties and injuries. These devices, which were used by Hezbollah members, were rigged with explosives and detonated remotely, causing widespread panic and chaos (Jones, 2024).</p>
-
-    <figure>
-        <img src="MapIsrealHezbollahConflict.jpg" alt="Map of Key Locations in Israel-Hezbollah Conflict" width="600">
-        <figcaption>Figure 2: Map of Key Locations in Israel-Hezbollah Conflict. This map shows the key locations affected by the use of weaponized pagers during the Israel-Hezbollah conflict in 2024.</figcaption>
-    </figure>
-
-    <p>The use of pagers in this manner highlights the darker side of technological advancements. The ability to weaponize everyday communication devices poses a significant threat, not only in terms of immediate physical harm but also in the broader context of psychological warfare. The explosions in Lebanon demonstrated how easily accessible technology could be repurposed for malicious intent, raising concerns about the security of other widely used technologies (Jones, 2024).</p>
-
-    <h2 id="potential-risks-with-modern-technologies">Potential Risks with Modern Technologies</h2>
-    <p>The incident in Lebanon serves as a stark reminder of the potential risks associated with modern technologies such as smartphones, electric cars, and other devices that rely on software and connectivity. In the event of a conflict, these technologies could be similarly exploited, leading to devastating consequences. The integration of software in these devices makes them vulnerable to hacking and remote manipulation, which could be used to disrupt communication, transportation, and even critical infrastructure (Doe, 2023).</p>
-    <p>The reasonable shock and concern following the Lebanon attacks underscore the need for robust security measures and ethical considerations in the development and deployment of technology. As we continue to innovate and integrate technology into our daily lives, it is crucial to remain vigilant about the potential for misuse and to implement safeguards that protect against such threats (Doe, 2023).</p>
-
-    <h2 id="conclusion">Conclusion</h2>
-    <p>The story of pagers is a testament to the double-edged sword of engineering advancements. While they played a pivotal role in improving communication, especially in critical sectors, they also exposed significant ethical and privacy issues. The recent events in Lebanon further illustrate the potential for technology to be misused, leading to catastrophic outcomes. The journey of pagers from a revolutionary tool to a relic of the past offers valuable lessons for the future of technology development: the need for a balanced approach that considers both innovation and its potential consequences.</p>
-
-    <h2 id="references">References</h2>
+<section id="references">
+    <h2>References</h2>
     <ul>
-        <li>Smith, J. (2022). The Evolution of Pagers. <i>Journal of Communication Technology</i>,
+        <li>Smith, J. (2022). The Evolution of Pagers. <i>Journal of Communication Technology</i>.</li>
+        <li>Jones, A. (2024). Weaponizing Everyday Tech. <i>Global Security Reports</i>.</li>
+    </ul>
+</section>
+
+<footer>
+    <p>&copy; 2024 ENG0018 | University of Surrey</p>
+</footer>
+
+</body>
+</html>
+
